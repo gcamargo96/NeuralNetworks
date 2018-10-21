@@ -85,7 +85,6 @@ model.compile(loss=keras.losses.categorical_crossentropy,
 
 # checkpoint = keras.callbacks.ModelCheckpoint("model.h5", monitor='loss', verbose=1, save_best_only=True, mode='min')
 # callbacks_list = [checkpoint]
-model.save("model.h5")
 
 model.fit(train_images, train_labels,
           batch_size=batch_size,
@@ -93,6 +92,8 @@ model.fit(train_images, train_labels,
           verbose=1,
           # callbacks=callbacks_list
          )
+
+model.save("model.h5")
 
 test_loss, test_acc = model.evaluate(test_images, test_labels)
  
