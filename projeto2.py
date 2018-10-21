@@ -91,7 +91,7 @@ model.fit(train_images, train_labels,
           batch_size=batch_size,
           epochs=epochs,
           verbose=1,
-          callbacks=callbacks_list
+          # callbacks=callbacks_list
          )
 
 test_loss, test_acc = model.evaluate(test_images, test_labels)
