@@ -20,21 +20,21 @@ train_images = train_images.reshape(len(train_images), 3,32,32).transpose([0, 2,
 test_images = test_images.reshape(len(test_images), 3,32,32).transpose([0, 2, 3, 1])
 
 model = keras.Sequential([
-    keras.layers.Conv2D(64, kernel_size=(2, 2), activation='relu', input_shape = (32, 32, 3) ),
+    keras.layers.Conv2D(100, kernel_size=(2, 2), activation='relu', input_shape = (32, 32, 3) ),
     keras.layers.MaxPooling2D(pool_size=(2, 2), strides=2),
     keras.layers.BatchNormalization(),
 
-    keras.layers.Conv2D(128, kernel_size=(2, 2), activation='relu'),
+    keras.layers.Conv2D(100, kernel_size=(2, 2), activation='relu'),
     keras.layers.MaxPooling2D(pool_size=(2, 2), strides=2),
     keras.layers.BatchNormalization(),
 
-    keras.layers.Conv2D(256, kernel_size=(2, 2), activation='relu'),
+    keras.layers.Conv2D(200, kernel_size=(2, 2), activation='relu'),
     keras.layers.MaxPooling2D(pool_size=(2, 2), strides=2),
     keras.layers.BatchNormalization(),
 
     keras.layers.Flatten(),
 
-    keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dense(100, activation='relu'),
     keras.layers.Dropout(0.5),
     keras.layers.BatchNormalization(),
 
